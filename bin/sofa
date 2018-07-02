@@ -88,12 +88,12 @@ if __name__ == "__main__":
         required=False,
         help='filters for network, put your ip into it, eg.192.168.0.100 is 192168000100, and first ip must be your localhost')
     # ===============TF_preprocessing ===============
-    parser.add_argument(
-            '--tf_prepare_filters',
-            metavar='"keyword1:color1,keyword2:color2"',
-            type=str,
-            required=False,
-            help='A string of list of pairs of keyword and color')
+    #parser.add_argument(
+    #        '--tf_prepare_filters',
+    #        metavar='"keyword1:color1,keyword2:color2"',
+    #        type=str,
+    #        required=False,
+    #        help='A string of list of pairs of keyword and color')
     # ===============================================
     cfg = SOFA_Config()
 
@@ -141,9 +141,9 @@ if __name__ == "__main__":
     cfg.gpu_filters.append(Filter('copyKind_2_', 'Peru'))
     cfg.gpu_filters.append(Filter('copyKind_10_', 'Purple'))
     # =============== TF_preprocessing filter ====================
-    cfg.tf_prepare_filters.append(Filter('resize','#C1ED99'))
-    cfg.tf_prepare_filters.append(Filter('decode','#99E7ED'))
-    cfg.tf_prepare_filters.append(Filter('batch','#F5A92C'))
+    #cfg.tf_prepare_filters.append(Filter('resize','#C1ED99'))
+    #cfg.tf_prepare_filters.append(Filter('decode','#99E7ED'))
+    #cfg.tf_prepare_filters.append(Filter('batch','#F5A92C'))
     # ===========================================================
     if args.gpu_filters is not None:
         pairs = args.gpu_filters.split(',')
@@ -166,8 +166,8 @@ if __name__ == "__main__":
     for filter in cfg.gpu_filters:
         print_info("GPU filter = %s:%s" % (filter.keyword, filter.color))
     # ======== TF_preprocessing Filter info print ===============
-    for filter in cfg.tf_prepare_filters:
-        print_info("TF_Prepare filter = %s:%s" % (filter.keyword, filter.color))
+    #for filter in cfg.tf_prepare_filters:
+    #    print_info("TF_Prepare filter = %s:%s" % (filter.keyword, filter.color))
     # ============================================================
     print_info("logdir = %s" % logdir)
 
