@@ -15,8 +15,8 @@ from sofa_config import *
 from sofa_print import *
 from random import *
 from sqlalchemy import create_engine
-from sofa_tf_prepare import *
-import shutil 
+#from sofa_tf_prepare import *
+#import shutil 
 
 def list_downsample(list_in, plot_ratio):
     new_list = []
